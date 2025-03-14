@@ -25,6 +25,7 @@ public class BenefitMaster {
     @Column(name = "\"agenID\"", nullable = false)
     private String agenID;
 
-    @Column(name = "\"insureName\"", nullable = false)
+    @Column(name = "\"insureName\"", columnDefinition = "VARCHAR(255) COLLATE \"th_TH.UTF-8\"")
     private String insureName;
+
 }

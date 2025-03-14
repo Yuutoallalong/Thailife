@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HexFormat;
 import java.util.List;
 
 @RestController
@@ -43,16 +44,20 @@ public class PolicyController {
                 .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
         try {
-            String decodedInsureName = new String(
-                    request.getRequestRecord().getInsureName().getBytes(StandardCharsets.UTF_8),
-                    StandardCharsets.UTF_8);
+            String rawInsureName = request.getRequestRecord().getInsureName();
+            System.out.println("? Received InsureName (RAW): " + rawInsureName);
 
-            System.out.println("? Received InsureName (RAW): " + request.getRequestRecord().getInsureName());
-            System.out.println("? Decoded InsureName: " + decodedInsureName);
+            String decodedInsureName = rawInsureName.replace("\uFEFF", "").trim(); // Minimal fix
+
+            System.out.println("? Decoded InsureName (UTF-8 Corrected): " + decodedInsureName);
+
             System.out.println("? Received InsureName (HEX): " +
-                    bytesToHex(request.getRequestRecord().getInsureName().getBytes(StandardCharsets.UTF_8)));
+                    HexFormat.of().formatHex(rawInsureName.getBytes(StandardCharsets.UTF_8)));
+            System.out.println("? Decoded InsureName (HEX): " +
+                    HexFormat.of().formatHex(decodedInsureName.getBytes(StandardCharsets.UTF_8)));
 
-            List<BenefitMaster> policies = policyService.findByInsureName(decodedInsureName.trim());
+            List<BenefitMaster> policies = policyService.findByInsureName(
+                    HexFormat.of().formatHex(decodedInsureName.getBytes(StandardCharsets.UTF_8)));
 
             if (policies.isEmpty()) {
                 responseStatus.setStatus("E");
