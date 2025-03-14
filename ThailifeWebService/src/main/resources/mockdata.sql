@@ -27,9 +27,9 @@ INSERT INTO policy_master ("policyNo", "policyType", "status", "agenID", "insure
 
 SELECT * FROM policy_master;
 
-SELECT datname, encoding, datcollate, datctype
-FROM pg_database
-WHERE datname = 'MockupDB';
+-- SELECT datname, encoding, datcollate, datctype
+-- FROM pg_database
+-- WHERE datname = 'MockupDB';
 
-SELECT "insureName", encode("insureName"::bytea, 'hex') AS hex_value
-FROM policy_master;
+-- SELECT "insureName", encode("insureName"::bytea, 'hex') AS hex_value
+-- FROM policy_master;
