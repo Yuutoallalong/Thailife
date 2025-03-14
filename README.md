@@ -110,4 +110,4 @@ This repository contains solutions to the technical test for Thailife. The proje
 ![Function Output](FunctionProb/Function_Output.png)
 
 ## Webservice Output
-![Webservice Output](ThailifeWebService\resulttemp.png)
+![Webservice Output](ThailifeWebService/resulttemp.png)
