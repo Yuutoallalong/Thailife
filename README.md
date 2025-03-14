@@ -96,5 +96,18 @@ This repository contains solutions to the technical test for Thailife. The proje
    ```
 
 ---
+## Result
+### Query 1: Partner Code = 071.xxx
+![SQL Query 1](SQLprob/sql1.png)
 
+### Query 2: Policies in 2020
+![SQL Query 2](SQLprob/sql2.png)
 
+### Query 3: Sum between 100,000 - 500,000
+![SQL Query 3](SQLprob/sql3.png)
+
+## Function Problem Output
+![Function Output](FunctionProb/Function_Output.png)
+
+## Webservice Output
+![Webservice Output](ThailifeWebService\resulttemp.png)
