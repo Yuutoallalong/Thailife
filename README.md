@@ -20,15 +20,22 @@ This repository contains solutions to the technical test for Thailife. The proje
 1. Open PostgreSQL and create the database:
    ```sql
    CREATE DATABASE DBCorebiz;
-   CREATE DATABASE MockupDB;
+
+   CREATE DATABASE "MockupDB"
+    WITH OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'th_TH.UTF-8'
+    LC_CTYPE = 'th_TH.UTF-8'
+    TEMPLATE = template0;
+
    ```
 2. Import the provided SQL file:
    ```sql
-   \i path/to/DBCorebiz.sql
+   \i SQLprob\.sql
    ```
 3. For the Mockup Database:
    ```sql
-   \i path/to/MockupDB_backup.sql
+   \i ThailifeWebService\src\main\resources\mockdata.sql
    ```
 
 ---
@@ -37,7 +44,7 @@ This repository contains solutions to the technical test for Thailife. The proje
 1. Navigate to the `ThailifeWebService` folder.
 2. Update the `application.properties` file with your database credentials:
    ```
-   spring.datasource.url=jdbc:postgresql://localhost:5432/MockupDB
+   spring.datasource.url=jdbc:postgresql://localhost:5432/MockupDB?charSet=UTF8
    spring.datasource.username=your_username
    spring.datasource.password=your_password
    ```
@@ -72,7 +79,7 @@ This repository contains solutions to the technical test for Thailife. The proje
 ### Step 5: SQL Query Instructions
 1. Open PostgreSQL.
 2. Run the provided queries from `SQLprob/.sql`.
-3. Example query to find policies with `PartnerCode = 071.xxx`:
+3. Query commands:
    ```sql
    SELECT *
    FROM partnerbenefit.benefit_master
