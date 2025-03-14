@@ -2,8 +2,8 @@
 
 This repository contains solutions to the technical test for Thailife. The project includes SQL queries, Java web service implementation using Gradle, and function-related logic.
 
-Already include some picture of  results, but can run it yourself to check
-I use most time to fix encoding issues to make datacase and java can read "นายA1" in input correctly.
+- Already include some picture of  results, but can run it yourself to check
+- I use most time to fix encoding issues to make datacase and java can read "นายA1" in input correctly. but still fail needs to query with \u0e19\u0e32\u0e22A1 instead
 ---
 
 ## Setup Instructions
@@ -50,7 +50,7 @@ I use most time to fix encoding issues to make datacase and java can read "น�
 
 ### Step 4: Testing the Web Service
 - Use Postman or a web browser to test the endpoints.
-- Example endpoint(nedd to use"insureName": "\u0e19\u0e32\u0e22A1" instead of "insureName": "นายA1" due to encoding issue i can't fix rightnow. ;-;):
+- Example endpoint(need to use"insureName": "\u0e19\u0e32\u0e22A1" instead of "insureName": "นายA1" due to encoding issue i can't fix rightnow. ;-;):
   ```
   POST http://localhost:8080/api/getPolicyInfo
 
