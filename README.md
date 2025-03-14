@@ -1,6 +1,6 @@
 # Thailife Technical Test Submission
 
-This repository contains solutions to the technical test for Thailife. The project includes SQL queries, Java web service implementation using Gradle, and function-related logic.
+This repository contains solutions to the technical test for Thailife. Result pic include at the bottom.
 
 - Already include some picture of  results, but can run it yourself to check, I already create mockup database for web-service problem
 - I use most of my time to fix encoding issues to make database and java can read "นายA1" in input correctly (seems like gradle or hibernate issue). but still fail, needs to query with \u0e19\u0e32\u0e22A1 instead
@@ -9,10 +9,10 @@ This repository contains solutions to the technical test for Thailife. The proje
 ## Setup Instructions
 
 ### Step 1: Install Dependencies
-- PostgreSQL (For database setup)
-- Java 21 (LTS) (For running the Java Web Service)
-- Gradle (For project build and dependency management)
-- VS Code (Recommended IDE) or any preferred IDE
+- PostgreSQL
+- Java 21
+- Gradle
+- VS Code
 
 ---
 
