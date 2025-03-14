@@ -3,7 +3,7 @@
 This repository contains solutions to the technical test for Thailife. The project includes SQL queries, Java web service implementation using Gradle, and function-related logic.
 
 - Already include some picture of  results, but can run it yourself to check
-- I use most time to fix encoding issues to make datacase and java can read "นายA1" in input correctly. but still fail needs to query with \u0e19\u0e32\u0e22A1 instead
+- I use most of my time to fix encoding issues to make database and java can read "นายA1" in input correctly (seems like gradle or hibernate issue). but still fail, needs to query with \u0e19\u0e32\u0e22A1 instead
 ---
 
 ## Setup Instructions
