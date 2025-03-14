@@ -90,12 +90,4 @@ Already include some picture of  results, but can run it yourself to check
 
 ---
 
-## Notes
-- All sensitive data like passwords are excluded and should be set manually in `.env` or `application.properties`.
-- Clear comments are added inside code and SQL files for better understanding.
-
----
-
-## Contact
-For any issues or questions, please feel free to reach out.
 
